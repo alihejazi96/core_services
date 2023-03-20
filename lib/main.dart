@@ -1,11 +1,9 @@
-import 'package:coreapp1/facilities_api.dart';
-import 'package:coreapp1/home.dart';
+import 'package:coreapp1/services/facilities_api.dart';
+import 'package:coreapp1/ui/Login_page/login.dart';
 import 'package:coreapp1/providers/provider_login_states.dart';
-import 'package:coreapp1/Login_page/screen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'constant/colors.dart';
 
 void main() {
   var app = MultiProvider(providers: [
@@ -15,7 +13,7 @@ void main() {
   ], child: const MyApp());
   runApp(app);
 
-  FacilitiesApi().getFacilities();
+  // FacilitiesApi().getFacilities();
 }
 
 class MyApp extends StatelessWidget {
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       home: const Scaffold(
-        body: HomePage(),
+        body: Login(),
 
       ),
     );
