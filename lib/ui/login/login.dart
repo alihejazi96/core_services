@@ -1,11 +1,9 @@
+import 'package:coreapp1/constants/colors.dart';
+import 'package:coreapp1/constants/text_sizes.dart';
 import 'package:coreapp1/providers/provider_login_states.dart';
-import 'package:coreapp1/ui/start_page/start_page.dart';
+import 'package:coreapp1/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../constants/colors.dart';
-import '../../constants/text_sizes.dart';
-
 
 
 class Login extends StatefulWidget {
@@ -40,7 +38,7 @@ class _LoginState extends State<Login> {
         return buildLoginPage();
       case States.succeeded:
         // Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => const AccountPage()));
-        return const FirstPage();
+        return const HomePage();
     }
   }
   buildLoginPage(){
@@ -188,7 +186,7 @@ class _LoginState extends State<Login> {
                         borderRadius: BorderRadius.circular(5)
                     )
                 ),
-                onPressed: () { LoginStates().login(TextEditingController().text, "password"); },
+                onPressed: () { Provider.of<LoginStates>(context).login(TextEditingController().text, "password"); },
                 child: Center(
                     child: Text(
                       "Login",

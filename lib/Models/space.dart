@@ -2,7 +2,7 @@
 
 class Facility {
   final String name;
-  final String capacity;
+  final int capacity;
   final List photos;
 
   Facility(

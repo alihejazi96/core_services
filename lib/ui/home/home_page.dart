@@ -1,23 +1,19 @@
-import 'package:coreapp1/ui/start_page/home_page/home_page.dart';
-import 'package:coreapp1/ui/start_page/setting_page/setting_page.dart';
-import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
-import 'account_page/account_page.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({Key? key}) : super(key: key);
+import 'package:coreapp1/constants/colors.dart';
+import 'package:coreapp1/ui/account_page/account_page.dart';
+import 'package:coreapp1/ui/home/setting_page/setting_page.dart';
+import 'package:flutter/material.dart';
+import 'facilities_page/facilities_page.dart';
+
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _FirstPageState createState() => _FirstPageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _HomePageState extends State<HomePage> {
   int _currentindex = 0;
-  final List pages = [
-    const HomePage(),
-    const AccountPage(),
-    const SettingPage(),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +25,8 @@ class _FirstPageState extends State<FirstPage> {
           children: [
             IndexedStack(
               index: _currentindex,
-              children: const [
-                HomePage(),
+              children:  [
+                FacilitiesPage(),
                 AccountPage(),
                 SettingPage()
               ],

@@ -1,6 +1,6 @@
-import 'package:coreapp1/services/facilities_api.dart';
-import 'package:coreapp1/ui/Login_page/login.dart';
+import 'package:coreapp1/providers/provider_facilities_page.dart';
 import 'package:coreapp1/providers/provider_login_states.dart';
+import 'package:coreapp1/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,10 @@ void main() {
   var app = MultiProvider(providers: [
     ChangeNotifierProvider(
       create: (context) => LoginStates(),
-    )
+    ),
+    ChangeNotifierProvider(
+      create: (context) => FacilitiesPageState(),
+    ),
   ], child: const MyApp());
   runApp(app);
 
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       home: const Scaffold(
-        body: Login(),
+        body: HomePage(),
 
       ),
     );

@@ -8,16 +8,16 @@ class PersonHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorApp.whiteText,
+      color: ColorApp.white,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
         child: Row(
           children: [
             CircleAvatar(
               backgroundColor: ColorApp.buttons,
-              radius: 40,
+              radius: 35,
               child: const CircleAvatar(
-                radius: 35,
+                radius: 30,
                 backgroundImage: AssetImage(
                   "images/profile.jpeg",
                 ),
